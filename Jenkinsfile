@@ -85,7 +85,7 @@ pipeline {
 
     stage('PP Deployment') {
       steps {
-        echo 'Deployment in pre-prod'
+        input(message: 'Do you want to promote in Pre-prod?', ok: 'Yes')
       }
     }
 
@@ -114,7 +114,7 @@ pipeline {
 
     stage('Prod Deployment') {
       steps {
-        echo 'Prod Deployment'
+        input(message: 'Do you want to promote in Prod', ok: 'Yes')
       }
     }
 
